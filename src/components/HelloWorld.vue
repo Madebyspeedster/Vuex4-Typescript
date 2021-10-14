@@ -10,8 +10,6 @@
     <input type="text" v-model="userName" v-on:input="changeUserName" />
     <h1>{{ user.name }}</h1>
     <h1>{{ user.age }}</h1>
-
-    <button @click="changeUser">Set another user</button>
   </div>
 </template>
 
@@ -51,7 +49,15 @@ export default defineComponent({
     const user = computed(
       () => store.getters[ACCESS_USER_KEYS[USER_KEYS.GET_CURRENT_USER]]
     );
-    return { totalCount, todoList, changeUser, user, userName, changeUserName };
+
+    return {
+      totalCount,
+      todoList,
+      changeUser,
+      user,
+      userName,
+      changeUserName,
+    };
   },
 });
 </script>
